@@ -83,7 +83,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 if(response.statusCode ==200){
                   Map<String, dynamic> details = jsonDecode(response.body);
-                  if(details["status"]){
+                  bool success = details["status"];
+                  if(success){
                     loginController.token = details["token"];
                     loginController.userName = details["user"]["username"];
                     Get.to(()=>const UsersScreen());

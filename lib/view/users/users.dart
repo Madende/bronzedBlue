@@ -84,6 +84,7 @@ class _UsersScreenState extends State<UsersScreen> {
 
         ),
         body: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
           child: Column(
             children:  [
             ListView.builder(
@@ -131,7 +132,12 @@ class _UsersScreenState extends State<UsersScreen> {
               ///display "no data" when list is empty
               if(resp.isEmpty)
                 Center(
-                  child: Text(loadingText),
+                  child: Column(
+                    children: [
+                      SizedBox(height: height*0.3,),
+                      Text(loadingText),
+                    ],
+                  ),
                 )
 
 
