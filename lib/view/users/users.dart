@@ -84,10 +84,11 @@ class _UsersScreenState extends State<UsersScreen> {
 
         ),
         body: SingleChildScrollView(
-          physics: const NeverScrollableScrollPhysics(),
+
           child: Column(
             children:  [
             ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             itemCount: resp.length,
