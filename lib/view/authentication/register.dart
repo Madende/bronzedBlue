@@ -31,9 +31,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
             SizedBox(
               height: height*0.07,
             ),
+
+            ///Icon
             SizedBox(
               child: Image.asset("assets/icon.png"),
             ),
+
+            ///username field
             CustomTextField(
               hintText: "Enter UserName",
               headingText: "",
@@ -41,6 +45,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               controller: registerController.nameController,
             ) ,
             SizedBox(height: height*0.02,),
+
+            ///Email field
             CustomTextField(
               hintText: "Enter Email",
               headingText: "",
@@ -48,6 +54,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               controller: registerController.emailController,
             ) ,
             SizedBox(height: height*0.02,),
+
+            ///Mobile number field
             CustomTextField(
               hintText: "Enter Mobile",
               headingText: "",
@@ -55,6 +63,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               controller: registerController.phoneController,
             ) ,
             SizedBox(height: height*0.02,),
+
+            ///Password field
             CustomTextField(
               obscureText: true,
               hintText: "Enter Password",
@@ -64,6 +74,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
 
             SizedBox(height: height*0.02,),
+
+            ///Confirm password field
             CustomTextField(
               obscureText: true,
               hintText: "Confirm Password",
@@ -72,7 +84,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               controller: registerController.cPasswordController,
             ),
 
-
+            ///Go to login
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -83,6 +95,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ],
             ),
 
+            ///Register Button
             SizedBox(
               width: width*0.5,
               child: CustomButton(onTap: () async {

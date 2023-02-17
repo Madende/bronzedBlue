@@ -37,6 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Image.asset("assets/icon.png"),
             ),
             SizedBox(height: height*0.02,),
+            ///Email address
             CustomTextField(
               hintText: "Enter Email",
               headingText: "",
@@ -44,6 +45,8 @@ class _LoginScreenState extends State<LoginScreen> {
               controller: loginController.emailController,
             )   ,
             SizedBox(height: height*0.04,),
+
+            ///Password field
             CustomTextField(
               obscureText: true,
               hintText: "Enter Password",
@@ -53,6 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             SizedBox(height: height*0.02,),
 
+            ///Go to register
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -63,6 +67,8 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
             SizedBox(height: height*0.02,),
+
+            ///Login button
             SizedBox(
               width: width*0.5,
               child: CustomButton(onTap: () async {

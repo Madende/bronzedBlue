@@ -18,7 +18,14 @@ class UsersScreen extends StatefulWidget {
 
 class _UsersScreenState extends State<UsersScreen> {
   LoginController loginController  = Get.find();
+
+  ///response from the server
   List<dynamic> resp =[] ;
+
+  String loadingText = "Loading...";
+
+
+  ///Get users method
   Future <void> _getUsers()async {
     try{
       var url = "${baseUrl}show-users";
@@ -35,6 +42,7 @@ class _UsersScreenState extends State<UsersScreen> {
       }
 
       setState(()  {
+        loadingText = "There are no Users";
       });
     } catch(e){
       print(e);
@@ -49,6 +57,8 @@ class _UsersScreenState extends State<UsersScreen> {
     _getUsers();
   }
 
+
+  ///onpop method
   Future<bool> _onClose() async {
     Get.to(()=>const LoginScreen());
     return true;
@@ -115,7 +125,15 @@ class _UsersScreenState extends State<UsersScreen> {
                 ),
               );
             }
-            )
+            ),
+
+              ///display loading text when querying the server
+              ///display "no data" when list is empty
+              if(resp.isEmpty)
+                Center(
+                  child: Text(loadingText),
+                )
+
 
             ],
           ),

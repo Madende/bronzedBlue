@@ -22,6 +22,8 @@ class _AddUserState extends State<AddUser> {
   final UserController userController = Get.put(UserController());
   LoginController loginController  = Get.find();
 
+
+  ///onPop method
   Future<bool> _onClose() async {
     Get.to(()=>const UsersScreen());
     return true;
@@ -43,12 +45,16 @@ class _AddUserState extends State<AddUser> {
           child: Column(
             children: [
               SizedBox(height: height*0.1,),
+
+              ///Username field
               CustomTextField(
                 headingText: "",
                 hintText: "User Name",
                 controller: userController.nameController,
               ) ,
               SizedBox(height: height*0.02,),
+
+              ///email field
               CustomTextField(
                 headingText: "",
                 hintText: "User Email",
@@ -57,6 +63,7 @@ class _AddUserState extends State<AddUser> {
 
               SizedBox(height: height*0.04,),
 
+              ///add user button
               CustomButton(onTap: () async {
                 var url = "${baseUrl}add-user";
                 var response = await http.post(Uri.parse(url),
